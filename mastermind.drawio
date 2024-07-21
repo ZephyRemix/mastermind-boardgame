@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-07-20T10:56:47.046Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="heDPTyafxQMU0T6RxE6H" version="24.7.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-21T00:01:49.216Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="_AUpyVOr9bdTs-Tzb3m3" version="24.7.1" type="github">
   <diagram name="Page-1" id="ZshSO4ownrepfYjG7Jd_">
     <mxGraphModel dx="2603" dy="696" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -41,10 +41,10 @@
           <mxGeometry y="78" width="140" height="26" as="geometry" />
         </mxCell>
         <mxCell id="9Viv94U3JfG2chc9FHKo-13" value="GameController" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="200" y="140" width="140" height="150" as="geometry" />
+          <mxGeometry x="180" y="140" width="180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="9Viv94U3JfG2chc9FHKo-14" value="&lt;div&gt;- players: Array&amp;lt;Player&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ init_player_role: Player&lt;/div&gt;&lt;div&gt;+ show_instructions&lt;/div&gt;&lt;div&gt;+ get_init_guess:&amp;nbsp;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="9Viv94U3JfG2chc9FHKo-13">
-          <mxGeometry y="26" width="140" height="124" as="geometry" />
+        <mxCell id="9Viv94U3JfG2chc9FHKo-14" value="&lt;div&gt;- players: Array&amp;lt;Player&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ init_player_role: Player&lt;/div&gt;&lt;div&gt;+ show_instructions&lt;/div&gt;&lt;div&gt;+ get_init_guess: Array&amp;lt;String&amp;gt;&lt;/div&gt;&lt;div&gt;- code_to_color(code: String): String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="9Viv94U3JfG2chc9FHKo-13">
+          <mxGeometry y="26" width="180" height="124" as="geometry" />
         </mxCell>
         <mxCell id="9Viv94U3JfG2chc9FHKo-36" value="Player" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="200" y="390" width="140" height="104" as="geometry" />
@@ -285,6 +285,12 @@
               <mxPoint x="666" y="680" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="9Viv94U3JfG2chc9FHKo-104" value="CodePeg" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="383" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9Viv94U3JfG2chc9FHKo-105" value="- color_code: String&lt;div&gt;- symbol: Char&lt;/div&gt;&lt;div&gt;+ representation: String&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- colorize(char, color): String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="9Viv94U3JfG2chc9FHKo-104">
+          <mxGeometry y="26" width="200" height="104" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
