@@ -1,3 +1,4 @@
+require 'colorize'
 require_relative 'game_controller'
 require_relative 'role_factory'
 require_relative 'decoder_board'
@@ -15,3 +16,7 @@ board.generate_pegs
 puts "Round starts! Computer is cookin'"
 computer.make_code(board.code_peg_set)
 # computer.move.each {|peg| puts peg.representation}
+
+game_controller.show_instructions(board.code_peg_colors)
+
+
