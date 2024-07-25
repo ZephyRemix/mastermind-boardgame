@@ -19,4 +19,4 @@ computer.make_code(board.code_peg_set)
 
 game_controller.show_instructions(board.code_peg_colors)
 
-
+game_state = GameState.new
