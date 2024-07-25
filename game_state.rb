@@ -6,15 +6,19 @@ class GameState
     self.code_broken = false
   end
 
-  def game_over(key_pegs)
+  def game_over?(key_pegs)
+    puts "#{key_pegs}"
+    self.code_broken = code_broken?(key_pegs)
+    puts "code_broken: #{self.code_broken}"
+    res = self.code_broken || self.turn_count > 12
+    puts "#{res}"
+    res
+  end
+
+  private
+
+  def code_broken?(key_pegs)
     red_ansi_code = "\e[31m"
-    if key_pegs.all? {|peg| peg.representation == "#{red_ansi_code}█\e[0m"}
-      self.code_broken = true
-      return true
-    elsif self.turn_count > 12
-      return true
-    else
-      return false   
-    end
+    key_pegs.all? {|peg| peg.representation == "#{red_ansi_code}█\e[0m"} ? true : false
   end
 end
