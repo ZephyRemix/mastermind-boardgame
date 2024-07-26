@@ -1,4 +1,5 @@
 require 'colorize'
+require 'pry-byebug'
 require_relative 'game_controller'
 require_relative 'role_factory'
 require_relative 'decoder_board'
@@ -23,9 +24,9 @@ game_controller.show_instructions(board.code_peg_colors)
 game_state = GameState.new
 
 until game_state.game_over?(computer.hint)
-  puts "entered loop"
   board.display_board(game_state, human, computer, game_controller)
-  puts "printed board"
   game_state.turn_count += 1
-  computer.get_hint(human.move, board, key_peg_set)
+  puts "Code breaker move: #{human.move.map {|peg| peg.representation}.join(' ')}}"
+  puts "Code maker move: #{computer.move.map {|peg| peg.representation}.join(' ')}}}"
+  computer.get_hint(human.move, board.key_peg_set, game_state.turn_count)
 end
