@@ -15,7 +15,7 @@ class DecoderBoard
     code_peg_ansi = code_peg_colors.map {|color| to_ansi(color)}
     key_peg_ansi = key_peg_colors.map {|color| to_ansi(color)}
 
-    #generate code and key pegs
+    # generate code and key pegs
     generate_peg_set(code_peg_ansi, code_peg_set, true)
     generate_peg_set(key_peg_ansi, key_peg_set, false)
   end
@@ -28,8 +28,11 @@ class DecoderBoard
     else 
       print "TURN #{game_state.turn_count} | Your guess: #{code_breaker.move.map{|peg| peg.representation}.join(' ')} | Hint: #{code_maker.hint.map{|peg| peg.representation}.join(' ')} | "
       game_controller.init_guess(self, code_breaker)
+      # reset code maker previous round's hints
+      code_maker.hint.clear
     end
   end
+
   private
 
   def to_ansi(color)
@@ -39,6 +42,8 @@ class DecoderBoard
     when "yellow"; "\e[33m"
     when "cyan"; "\e[36m"
     when "magenta"; "\e[35m"
+    when "red"; "\e[31m"
+    when "white"; "\e[37m"
     end
   end
 

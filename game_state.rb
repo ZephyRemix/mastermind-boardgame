@@ -7,14 +7,14 @@ class GameState
   end
 
   def game_over?(key_pegs)
-    puts "#{key_pegs}"
+    # puts "#{key_pegs}"
     if key_pegs == []
       return false
     end
     self.code_broken = code_broken?(key_pegs)
-    puts "code_broken: #{self.code_broken}"
+    # puts "code_broken: #{self.code_broken}"
     res = self.code_broken || self.turn_count > 12
-    puts "#{res}"
+    # puts "#{res}"
     res
   end
 
