@@ -30,4 +30,12 @@ class GameState
       return true
     end
   end
+
+  def calculate_score
+    if self.code_broken
+      self.turn_count == 12 ? score = turn_count + 1 : score = turn_count
+    else
+      score = turn_count 
+    end
+  end
 end

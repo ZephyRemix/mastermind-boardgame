@@ -26,4 +26,8 @@ class GameController
     color_codes = gets.chomp.split("").map{|num| num.to_i}
     code_breaker.set_pegs(color_codes, board.code_peg_ansi, code_breaker)
   end
+  
+  def announce_points(score)
+    puts "Code maker scored #{score} points!"
+  end
 end

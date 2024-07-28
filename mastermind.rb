@@ -24,16 +24,17 @@ game_state = GameState.new
 until game_state.game_over?(computer.hint)
   board.display_board(game_state, human, computer, game_controller)
   game_state.turn_count += 1
-  # puts "Code breaker move: #{human.move.map {|peg| peg.representation}.join(' ')}}"
-  # puts "Code maker   move: #{computer.move.map {|peg| peg.representation}.join(' ')}}}"
+  puts "Code breaker move: #{human.move.map {|peg| peg.representation}.join(' ')}}"
+  puts "Code maker   move: #{computer.move.map {|peg| peg.representation}.join(' ')}}}"
   computer.get_hint(human.move, board.key_peg_ansi, game_state.turn_count)
 end
 
-# if game over
-# show winning guess and hint
+# display game winning hand
 if game_state.game_over?(computer.hint)
   board.display_board(game_state, human, computer, game_controller)
   computer.get_hint(human.move, board.key_peg_ansi, game_state.turn_count)
-  puts "\nCongratulations! "
+  print "\nCongratulations! "
 end
-# congratulate winner
+
+# announce score 
+game_controller.announce_points(game_state.calculate_score)
