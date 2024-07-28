@@ -22,12 +22,12 @@ class GameController
   end
 
   def init_guess(board, code_breaker)
-    print "Enter new guess: ".colorize(:cyan)
+    print "Enter new guess: "
     color_codes = gets.chomp.split("").map{|num| num.to_i}
     code_breaker.set_pegs(color_codes, board.code_peg_ansi, code_breaker)
   end
   
   def announce_points(score)
-    puts "Code maker scored #{score} points!"
+    puts "Code maker scored #{score} points!".colorize(:green)
   end
 end

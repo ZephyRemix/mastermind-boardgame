@@ -33,10 +33,10 @@ class GameState
 
   def calculate_score
     if self.code_broken
-      puts "\nCodemaker got the better of the mystery, only needing #{self.turn_count} rounds!"
+      puts "\nCodemaker got the better of the mystery, only needing #{self.turn_count} rounds!".colorize(:green)
       self.turn_count == 12 ? score = turn_count + 1 : score = turn_count
     else
-      puts "\nCodebreaker failed to solve the mystery!"
+      puts "\nCodebreaker failed to solve the mystery!".colorize(:red)
       score = turn_count + 1
     end
   end
