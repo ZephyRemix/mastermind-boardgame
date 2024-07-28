@@ -1,6 +1,7 @@
+# Factory class for creating Code Breaker and Code Maker roles
 class RoleFactory
   attr_accessor :move
-  
+
   def initialize
     self.move = []
   end
@@ -11,7 +12,7 @@ class RoleFactory
       CodeBreaker.new
     when :make
       CodeMaker.new
-    else 
+    else
       raise "Unknown role: #{role}"
     end
   end
