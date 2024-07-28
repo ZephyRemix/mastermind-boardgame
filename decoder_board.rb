@@ -12,7 +12,7 @@ class DecoderBoard
     # binding.pry
     if game_state.turn_count == 0
       game_controller.init_guess(self, code_breaker)
-    elsif game_state.turn_count == 12 || game_state.code_broken?(code_maker.hint)
+    elsif game_state.turn_count >= 12 || game_state.code_broken?(code_maker.hint)
       print "TURN %02d" % game_state.turn_count 
       print "| Your guess: #{code_breaker.move.map{|peg| peg.representation}.join(' ')} | Hint: #{code_maker.hint.map{|peg| peg.representation}.join(' ')} | "
       # print "TURN #{game_state.turn_count} | Your guess: #{code_breaker.move.map{|peg| peg.representation}.join(' ')} | Hint: #{code_maker.hint.map{|peg| peg.representation}.join(' ')} | "

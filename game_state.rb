@@ -12,7 +12,7 @@ class GameState
     end
     self.code_broken = code_broken?(key_pegs)
     # puts "code_broken: #{self.code_broken}"
-    res = self.code_broken || self.turn_count > 12
+    res = self.code_broken || self.turn_count >= 12
     # puts "#{res}"
     res
   end
@@ -33,9 +33,11 @@ class GameState
 
   def calculate_score
     if self.code_broken
+      puts "\nCodemaker got the better of the mystery, only needing #{self.turn_count} rounds!"
       self.turn_count == 12 ? score = turn_count + 1 : score = turn_count
     else
-      score = turn_count 
+      puts "\nCodebreaker failed to solve the mystery!"
+      score = turn_count + 1
     end
   end
 end
