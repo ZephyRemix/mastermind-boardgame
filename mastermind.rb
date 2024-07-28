@@ -24,13 +24,11 @@ game_state = GameState.new
 until game_state.game_over?(computer.hint)
   board.display_board(game_state, human, computer, game_controller)
   game_state.turn_count += 1
-  # puts "Code breaker move: #{human.move.map {|peg| peg.representation}.join(' ')}}"
   computer.get_hint(human.move, board.key_peg_ansi, game_state.turn_count)
 end
 
 # display game winning hand
 if game_state.game_over?(computer.hint)
-  # puts "in second loop"
   board.display_board(game_state, human, computer, game_controller)
   computer.get_hint(human.move, board.key_peg_ansi, game_state.turn_count)
 end
