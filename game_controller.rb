@@ -22,15 +22,8 @@ class GameController
   end
 
   def init_guess(board, code_breaker)
-    print "Enter new guess: "
+    print "Enter new guess: ".colorize(:cyan)
     color_codes = gets.chomp.split("").map{|num| num.to_i}
-    set_pegs(color_codes, board, code_breaker)
-  end
-
-  private
-
-  def set_pegs(color_code, board, code_breaker)
-    chosen_pegs = color_code.map{|code| board.code_peg_set[code]}
-    code_breaker.move = chosen_pegs
+    code_breaker.set_pegs(color_codes, board.code_peg_ansi, code_breaker)
   end
 end
